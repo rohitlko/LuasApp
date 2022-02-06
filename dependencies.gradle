@@ -1,0 +1,42 @@
+ext.versions = [
+        minSdk               : 24,
+        compileSdk           : 30,
+        versionCode          : 1,
+        versionName          : '1.0.0',
+        buildTools           : '30.0.3',
+
+        // rxjava
+        rxjava               : '3.0.0',
+
+        // androidx
+        coreKtx              : '1.3.2',
+        appcompat            : '1.2.0',
+        constraintlayout     : '2.0.4',
+        cardview             : '1.0.0',
+
+        // architecture components
+        fragmentVersion      : '1.2.5',
+        lifecycleVersion     : '2.2.0',
+
+        // di
+        hiltCoreVersion      : '2.31-alpha',
+        hiltVersion          : '1.0.0-alpha02',
+
+        // network
+        retrofitVersion      : '2.9.0',
+        okhttpVersion        : '4.9.0',
+
+        // adapter
+        recyclerView         : '1.1.0',
+
+        // desugaring
+        coreDesugaring       : '1.1.1',
+
+        // unit test
+        junitVersion         : '4.13.1',
+        androidxTestJunit    : '1.1.2',
+        espressoVersion      : '3.3.0',
+        mockitoKotlinVersion : '2.2.0',
+        mockitoInlineVersion : '3.5.13',
+        androidxCoreTesting  : '2.1.0'
+]
