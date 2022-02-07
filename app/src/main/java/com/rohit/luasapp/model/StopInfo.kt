@@ -7,17 +7,6 @@ import org.simpleframework.xml.Element
 import org.simpleframework.xml.ElementList
 import org.simpleframework.xml.Root
 
-/**
- * Data class which provides a model for the StopInfo, annotated with @Root annotation to indicate
- * the class should be serialized.
- *
- * @constructor Sets all properties of the StopInfo
- * @property created indicates when the stopInfo was created
- * @property stopName the name identifier of the stop
- * @property stopAbbreviation the name abbreviation of the stop
- * @property message the message status of the stop
- * @property lines possible stop directions lines of the stop
- */
 @Root(name = "stopInfo")
 @Parcelize
 data class StopInfo(

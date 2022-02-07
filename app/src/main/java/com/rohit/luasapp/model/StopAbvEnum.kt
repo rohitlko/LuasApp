@@ -1,4 +1,4 @@
-package com.rohit.luasapp.model.enum
+package com.rohit.luasapp.model
 
 /**
  * Enum created to provide the stops abbreviation for the application

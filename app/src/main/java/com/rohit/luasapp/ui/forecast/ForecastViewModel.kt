@@ -10,7 +10,7 @@ import com.rohit.luasapp.model.ErrorForecastData
 import com.rohit.luasapp.model.LoadedForecastData
 import com.rohit.luasapp.model.LoadingForecastData
 import com.rohit.luasapp.model.StopInfo
-import com.rohit.luasapp.model.enum.StopAbvEnum
+import com.rohit.luasapp.model.StopAbvEnum
 import com.rohit.luasapp.repository.forecast.ForecastRepository
 import com.rohit.luasapp.util.Response
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers

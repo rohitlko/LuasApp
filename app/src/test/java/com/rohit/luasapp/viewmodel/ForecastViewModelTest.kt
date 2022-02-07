@@ -4,9 +4,7 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import androidx.lifecycle.SavedStateHandle
 import com.rohit.luasapp.RxImmediateSchedulerRule
-import com.rohit.luasapp.model.ErrorForecastData
 import com.rohit.luasapp.model.LoadedForecastData
-import com.rohit.luasapp.model.LoadingForecastData
 import com.rohit.luasapp.model.StopInfo
 import com.rohit.luasapp.repository.forecast.ForecastRepository
 import com.rohit.luasapp.ui.forecast.ForecastViewModel
@@ -63,52 +61,6 @@ class ForecastViewModelTest {
     @After
     fun close() {
         localTime.close()
-    }
-
-    @Test
-    fun `should receive success status update when data is refreshed successfully`() {
-        // Given
-        whenever(repository.forecast).thenReturn(Observable.just(LoadedForecastData(StopInfo())))
-        whenever(repository.loadForecast(any())).thenReturn(Completable.complete())
-
-        // When
-        viewModel.initialize()
-        viewModel.refreshForecast("sti")
-
-        // Then
-        verify(repository, times(1)).loadForecast(eq("sti"))
-        verify(mockLiveDataObserver, times(1)).onChanged(eq(Response(Response.Status.SUCCESS, StopInfo(), null, null)))
-    }
-
-    @Test
-    fun `should receive failure status update when data fails to refresh`() {
-        // Given
-        val exception = Exception()
-        whenever(repository.forecast).thenReturn(Observable.just(ErrorForecastData(exception)))
-        whenever(repository.loadForecast(any())).thenReturn(Completable.error(exception))
-
-        // When
-        viewModel.initialize()
-        viewModel.refreshForecast("err")
-
-        // Then
-        verify(repository, times(1)).loadForecast(eq("err"))
-        verify(mockLiveDataObserver, times(1)).onChanged(eq(Response(Response.Status.ERROR, null, exception, null)))
-    }
-
-    @Test
-    fun `should receive loading status update when refreshing data`() {
-        // Given
-        whenever(repository.forecast).thenReturn(Observable.just(LoadingForecastData))
-        whenever(repository.loadForecast(any())).thenReturn(Completable.complete())
-
-        // When
-        viewModel.initialize()
-        viewModel.refreshForecast("loa")
-
-        // Then
-        verify(repository, times(1)).loadForecast(eq("loa"))
-        verify(mockLiveDataObserver, times(1)).onChanged(eq(Response(Response.Status.LOADING, null, null, null)))
     }
 
     @Test
