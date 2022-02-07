@@ -5,7 +5,6 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rohit.luasapp.data.StopInfo
-import com.rohit.luasapp.data.StopsEnum
 import com.rohit.luasapp.repository.forecast.LuasRepository
 import com.rohit.luasapp.api.ApiResponse
 import com.rohit.luasapp.api.ErrorForecastData

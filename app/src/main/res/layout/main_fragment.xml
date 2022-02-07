@@ -27,22 +27,20 @@
             android:layout_marginTop="44dp"
             android:text="@string/app_name"
             android:textColor="@color/colorPrimaryDark"
-            android:textSize="@dimen/text_xxlarge"
+            android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/forecastRecyclerView"
-            android:layout_width="304dp"
-            android:layout_height="362dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="56dp"
-
+            android:padding="20dp"
             app:layoutManager="LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.495"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/stopName"
             app:layout_constraintVertical_bias="0.0"
@@ -54,9 +52,11 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="@{forecast.stopName}"
+            android:layout_marginTop="@dimen/margin_large"
+            android:textColor="@android:color/black"
             android:textSize="@dimen/text_large"
             app:layout_constraintTop_toBottomOf="@id/textView"
-            tools:text="Marlborough" />
+            tools:text="Test" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

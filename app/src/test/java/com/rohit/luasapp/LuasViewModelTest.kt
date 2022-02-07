@@ -36,7 +36,7 @@ class LuasViewModelTest {
 
     @Rule
     @JvmField
-    var testSchedulerRule = RxImmediateSchedulerRule()
+    var testSchedulerRule = SchedulerRule()
 
     @Rule
     @JvmField

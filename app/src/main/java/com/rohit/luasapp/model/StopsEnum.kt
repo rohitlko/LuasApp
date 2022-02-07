@@ -1,4 +1,4 @@
-package com.rohit.luasapp.data
+package com.rohit.luasapp.model
 
 enum class StopsEnum(val abv: String) {
     MARLBOROUGH("MAR"),
