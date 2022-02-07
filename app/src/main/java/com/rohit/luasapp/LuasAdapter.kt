@@ -1,10 +1,10 @@
-package com.rohit.luasapp.ui.forecast
+package com.rohit.luasapp
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.rohit.luasapp.databinding.ItemTramBinding
-import com.rohit.luasapp.model.Tram
+import com.rohit.luasapp.data.Tram
 
 class LuasAdapter : RecyclerView.Adapter<LuasAdapter.ViewHolder>() {
 

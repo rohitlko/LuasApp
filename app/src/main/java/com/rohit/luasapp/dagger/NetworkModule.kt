@@ -1,4 +1,4 @@
-package com.rohit.luasapp.di
+package com.rohit.luasapp.dagger
 
 import com.rohit.luasapp.BuildConfig
 import com.rohit.luasapp.api.LuasService

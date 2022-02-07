@@ -2,7 +2,6 @@ package com.rohit.luasapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.rohit.luasapp.ui.forecast.LuasFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

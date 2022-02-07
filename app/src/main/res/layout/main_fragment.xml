@@ -7,31 +7,18 @@
 
         <variable
             name="forecast"
-            type="com.rohit.luasapp.model.StopInfo" />
-
-        <variable
-            name="isLoading"
-            type="Boolean" />
+            type="com.rohit.luasapp.data.StopInfo" />
 
         <variable
             name="adapter"
-            type="com.rohit.luasapp.ui.forecast.LuasAdapter" />
+            type="com.rohit.luasapp.LuasAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.rohit.luasapp.ui.forecast.LuasFragment">
-
-        <!--        <View-->
-        <!--            android:id="@+id/view"-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="430dp"-->
-        <!--            android:background="@drawable/header_bg"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+        tools:context="com.rohit.luasapp.LuasFragment">
 
         <TextView
             android:id="@+id/textView"
@@ -44,7 +31,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -66,9 +52,9 @@
             android:id="@+id/stopName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:text="@{forecast.stopName}"
             android:textSize="@dimen/text_large"
-            android:gravity="center_horizontal"
             app:layout_constraintTop_toBottomOf="@id/textView"
             tools:text="Marlborough" />
 

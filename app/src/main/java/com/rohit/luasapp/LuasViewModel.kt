@@ -1,30 +1,28 @@
-package com.rohit.luasapp.ui.forecast
+package com.rohit.luasapp
 
 import android.util.Log
-import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import com.rohit.luasapp.model.ErrorForecastData
-import com.rohit.luasapp.model.LoadedForecastData
-import com.rohit.luasapp.model.LoadingForecastData
-import com.rohit.luasapp.model.StopInfo
-import com.rohit.luasapp.model.StopAbvEnum
-import com.rohit.luasapp.repository.forecast.ForecastRepository
-import com.rohit.luasapp.util.Response
+import com.rohit.luasapp.data.StopInfo
+import com.rohit.luasapp.data.StopAbvEnum
+import com.rohit.luasapp.repository.forecast.LuasRepository
+import com.rohit.luasapp.api.ApiResponse
+import com.rohit.luasapp.api.ErrorForecastData
+import com.rohit.luasapp.api.LoadedForecastData
+import com.rohit.luasapp.api.LoadingForecastData
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import java.time.LocalTime
 
 class LuasViewModel @ViewModelInject constructor(
-    private val repository: ForecastRepository
+    private val repository: LuasRepository
 ) : ViewModel() {
 
     private val compositeDisposable = CompositeDisposable()
 
-    val currentForecast: MutableLiveData<Response<StopInfo>> = MutableLiveData()
+    val currentForecast: MutableLiveData<ApiResponse<StopInfo>> = MutableLiveData()
 
     fun initialize() {
         addToDisposable(
@@ -35,7 +33,7 @@ class LuasViewModel @ViewModelInject constructor(
                         currentForecast.value = data
                             .let { it ->
                                 when (it) {
-                                    is LoadingForecastData -> Response.loading()
+                                    is LoadingForecastData -> ApiResponse.loading()
                                     is LoadedForecastData -> {
                                         val tramDirection: String =
                                             if (it.forecast.stopAbbreviation == StopAbvEnum.STILLORGAN.abv) "Inbound" else "Outbound"
@@ -43,9 +41,9 @@ class LuasViewModel @ViewModelInject constructor(
                                         it.forecast.lines =
                                             it.forecast.lines.filter { direction -> direction.name == tramDirection }
 
-                                        Response.success(it.forecast)
+                                        ApiResponse.success(it.forecast)
                                     }
-                                    is ErrorForecastData -> Response.error(
+                                    is ErrorForecastData -> ApiResponse.error(
                                         it.error.localizedMessage,
                                         it.error
                                     )
@@ -53,7 +51,7 @@ class LuasViewModel @ViewModelInject constructor(
                             }
                     },
                     {
-                        currentForecast.value = Response.error(it.localizedMessage, it)
+                        currentForecast.value = ApiResponse.error(it.localizedMessage, it)
                     }
                 )
         )

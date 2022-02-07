@@ -1,7 +1,7 @@
 
 package com.rohit.luasapp.api
 
-import com.rohit.luasapp.model.StopInfo
+import com.rohit.luasapp.data.StopInfo
 import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

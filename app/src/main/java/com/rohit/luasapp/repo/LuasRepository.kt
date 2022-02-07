@@ -1,10 +1,6 @@
 package com.rohit.luasapp.repository.forecast
 
-import com.rohit.luasapp.api.LuasService
-import com.rohit.luasapp.model.ErrorForecastData
-import com.rohit.luasapp.model.ForecastData
-import com.rohit.luasapp.model.LoadedForecastData
-import com.rohit.luasapp.model.LoadingForecastData
+import com.rohit.luasapp.api.*
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.subjects.BehaviorSubject
@@ -12,13 +8,13 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class ForecastRepository @Inject constructor(
+class LuasRepository @Inject constructor(
     private val luasService: LuasService
-) : IForecastRepository {
+) : LuasInterface {
 
-    private val forecastSubject = BehaviorSubject.createDefault(LoadingForecastData as ForecastData)
+    private val forecastSubject = BehaviorSubject.createDefault(LoadingForecastData as LuasData)
 
-    override val forecast: Observable<ForecastData> = forecastSubject
+    override val forecast: Observable<LuasData> = forecastSubject
 
     override fun loadForecast(stopAbv: String): Completable =
         luasService.loadForecast(stopAbv)
@@ -34,4 +30,10 @@ class ForecastRepository @Inject constructor(
                 )
             ) }
             .ignoreElement()
+}
+
+interface LuasInterface {
+    val forecast: Observable<LuasData>
+    fun loadForecast(stopAbv: String): Completable
+
 }

@@ -7,7 +7,7 @@
 
         <variable
             name="tram"
-            type="com.rohit.luasapp.model.Tram" />
+            type="com.rohit.luasapp.data.Tram" />
     </data>
 
     <androidx.cardview.widget.CardView

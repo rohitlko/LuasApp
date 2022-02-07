@@ -2,12 +2,11 @@ package com.rohit.luasapp
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import com.rohit.luasapp.model.LoadedForecastData
-import com.rohit.luasapp.model.StopInfo
-import com.rohit.luasapp.repository.forecast.ForecastRepository
-import com.rohit.luasapp.ui.forecast.LuasViewModel
-import com.rohit.luasapp.util.Response
+import com.rohit.luasapp.data.StopInfo
+import com.rohit.luasapp.repository.forecast.LuasRepository
+import com.rohit.luasapp.api.ApiResponse
 import com.nhaarman.mockitokotlin2.*
+import com.rohit.luasapp.api.LoadedForecastData
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Observable
 import org.junit.After
@@ -23,17 +22,17 @@ import java.time.LocalTime
 
 
 @RunWith(MockitoJUnitRunner::class)
-class ForecastViewModelTest {
+class LuasViewModelTest {
 
     private lateinit var viewModel: LuasViewModel
     private lateinit var beforeMoonTime: LocalTime
     private lateinit var afterMoonTime: LocalTime
 
     @Mock
-    private lateinit var repository: ForecastRepository
+    private lateinit var repository: LuasRepository
 
     @Mock
-    lateinit var mockLiveDataObserver: Observer<Response<StopInfo>>
+    lateinit var mockLiveDataObserver: Observer<ApiResponse<StopInfo>>
 
     @Rule
     @JvmField

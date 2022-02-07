@@ -1,8 +1,8 @@
-package com.rohit.luasapp.di
+package com.rohit.luasapp.dagger
 
 import com.rohit.luasapp.api.LuasService
-import com.rohit.luasapp.repository.forecast.ForecastRepository
-import com.rohit.luasapp.repository.forecast.IForecastRepository
+import com.rohit.luasapp.repository.forecast.LuasRepository
+import com.rohit.luasapp.repository.forecast.LuasInterface
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,6 +16,6 @@ object RepositoryModule {
 
     @Provides
     @ViewModelScoped
-    fun provideForecastRepository(luasService: LuasService): IForecastRepository = ForecastRepository(luasService)
+    fun provideForecastRepository(luasService: LuasService): LuasInterface = LuasRepository(luasService)
 
 }

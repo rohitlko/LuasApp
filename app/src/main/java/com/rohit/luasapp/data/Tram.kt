@@ -1,4 +1,4 @@
-package com.rohit.luasapp.model
+package com.rohit.luasapp.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
