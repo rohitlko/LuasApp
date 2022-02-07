@@ -21,13 +21,12 @@ import org.mockito.Mockito.mockStatic
 import org.mockito.junit.MockitoJUnitRunner
 import java.time.LocalTime
 
-
 @RunWith(MockitoJUnitRunner::class)
 class LuasViewModelTest {
 
     private lateinit var viewModel: LuasViewModel
-    private lateinit var beforeMoonTime: LocalTime
-    private lateinit var afterMoonTime: LocalTime
+    private lateinit var beforeNoonTime: LocalTime
+    private lateinit var afterNoonTime: LocalTime
 
     @Mock
     private lateinit var repository: LuasRepository
@@ -47,8 +46,8 @@ class LuasViewModelTest {
 
     @Before
     fun setup() {
-        beforeMoonTime = LocalTime.of(11,0,0)
-        afterMoonTime = LocalTime.of(13,0,0)
+        beforeNoonTime = LocalTime.of(11,0,0)
+        afterNoonTime = LocalTime.of(13,0,0)
 
         localTime = mockStatic(LocalTime::class.java)
 
@@ -67,7 +66,7 @@ class LuasViewModelTest {
         whenever(repository.forecast).thenReturn(Observable.just(LoadedForecastData(StopInfo())))
         whenever(repository.loadForecast(any())).thenReturn(Completable.complete())
 
-        whenever(LocalTime.now()).thenReturn(afterMoonTime)
+        whenever(LocalTime.now()).thenReturn(afterNoonTime)
 
         // When
         viewModel.initialize()
@@ -83,7 +82,7 @@ class LuasViewModelTest {
         whenever(repository.forecast).thenReturn(Observable.just(LoadedForecastData(StopInfo())))
         whenever(repository.loadForecast(any())).thenReturn(Completable.complete())
 
-        whenever(LocalTime.now()).thenReturn(beforeMoonTime)
+        whenever(LocalTime.now()).thenReturn(beforeNoonTime)
 
         // When
         viewModel.initialize()

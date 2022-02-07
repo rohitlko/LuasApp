@@ -1,6 +1,6 @@
 package com.rohit.luasapp.data
 
-enum class StopAbvEnum(val abv: String) {
+enum class StopsEnum(val abv: String) {
     MARLBOROUGH("MAR"),
     STILLORGAN("STI")
 }

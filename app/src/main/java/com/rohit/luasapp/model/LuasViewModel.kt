@@ -5,7 +5,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.rohit.luasapp.data.StopInfo
-import com.rohit.luasapp.data.StopAbvEnum
+import com.rohit.luasapp.data.StopsEnum
 import com.rohit.luasapp.repository.forecast.LuasRepository
 import com.rohit.luasapp.api.ApiResponse
 import com.rohit.luasapp.api.ErrorForecastData
@@ -36,7 +36,7 @@ class LuasViewModel @ViewModelInject constructor(
                                     is LoadingForecastData -> ApiResponse.loading()
                                     is LoadedForecastData -> {
                                         val tramDirection: String =
-                                            if (it.forecast.stopAbbreviation == StopAbvEnum.STILLORGAN.abv) "Inbound" else "Outbound"
+                                            if (it.forecast.stopAbbreviation == StopsEnum.STILLORGAN.abv) "Inbound" else "Outbound"
 
                                         it.forecast.lines =
                                             it.forecast.lines.filter { direction -> direction.name == tramDirection }
@@ -71,8 +71,8 @@ class LuasViewModel @ViewModelInject constructor(
 
     private fun getStopName() = when {
         LocalTime.now().isAfter(LocalTime.MIDNIGHT) && LocalTime.now()
-            .isBefore(LocalTime.NOON) -> StopAbvEnum.MARLBOROUGH.abv
-        else -> StopAbvEnum.STILLORGAN.abv
+            .isBefore(LocalTime.NOON) -> StopsEnum.MARLBOROUGH.abv
+        else -> StopsEnum.STILLORGAN.abv
     }
 
     private fun addToDisposable(disposable: Disposable) = compositeDisposable.add(disposable)

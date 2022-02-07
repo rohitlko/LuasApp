@@ -2,9 +2,13 @@ package com.rohit.luasapp.dagger
 
 import com.rohit.luasapp.BuildConfig
 import com.rohit.luasapp.api.LuasService
+import com.rohit.luasapp.repository.forecast.LuasInterface
+import com.rohit.luasapp.repository.forecast.LuasRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.scopes.ViewModelScoped
 import dagger.hilt.components.SingletonComponent
 import io.reactivex.rxjava3.schedulers.Schedulers
 import okhttp3.OkHttpClient
@@ -44,5 +48,16 @@ object NetworkModule {
     fun provideLuasService(retrofit: Retrofit): LuasService {
         return retrofit.create(LuasService::class.java)
     }
+
+}
+
+@Module
+
+@InstallIn(ViewModelComponent::class)
+object RepositoryModule {
+
+    @Provides
+    @ViewModelScoped
+    fun provideForecastRepository(luasService: LuasService): LuasInterface = LuasRepository(luasService)
 
 }
