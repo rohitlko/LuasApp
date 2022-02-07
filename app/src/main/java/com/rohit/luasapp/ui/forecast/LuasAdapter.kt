@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rohit.luasapp.databinding.ItemTramBinding
 import com.rohit.luasapp.model.Tram
 
-class TramAdapter : RecyclerView.Adapter<TramAdapter.ViewHolder>() {
+class LuasAdapter : RecyclerView.Adapter<LuasAdapter.ViewHolder>() {
 
     private val items: MutableList<Tram> = mutableListOf()
 

@@ -22,7 +22,7 @@ class ForecastFragment : Fragment() {
 
     private val viewModel: ForecastViewModel by viewModels()
     private lateinit var binding: MainFragmentBinding
-    private val tramsAdapter: TramAdapter = TramAdapter()
+    private val tramsAdapter: LuasAdapter = LuasAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

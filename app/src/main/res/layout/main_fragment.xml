@@ -15,7 +15,7 @@
 
         <variable
             name="adapter"
-            type="com.rohit.luasapp.ui.forecast.TramAdapter" />
+            type="com.rohit.luasapp.ui.forecast.LuasAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
