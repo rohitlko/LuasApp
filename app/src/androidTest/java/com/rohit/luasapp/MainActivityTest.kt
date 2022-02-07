@@ -2,7 +2,7 @@ package com.rohit.luasapp
 
 import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.rohit.luasapp.ui.forecast.ForecastFragment
+import com.rohit.luasapp.ui.forecast.LuasFragment
 import org.junit.Before
 import org.junit.Rule
 import org.junit.runner.RunWith
@@ -18,7 +18,7 @@ class MainActivityTest {
     fun init() {
         activityRule.scenario.onActivity {
             it.supportFragmentManager.beginTransaction()
-                .replace(R.id.container, ForecastFragment.newInstance())
+                .replace(R.id.container, LuasFragment.newInstance())
                 .commitNow()
         }
     }

@@ -2,7 +2,7 @@ package com.rohit.luasapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.rohit.luasapp.ui.forecast.ForecastFragment
+import com.rohit.luasapp.ui.forecast.LuasFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, ForecastFragment.newInstance())
+                    .replace(R.id.container, LuasFragment.newInstance())
                     .commitNow()
         }
     }

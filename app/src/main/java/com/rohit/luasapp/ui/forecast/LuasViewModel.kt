@@ -18,7 +18,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import java.time.LocalTime
 
-class ForecastViewModel @ViewModelInject constructor(
+class LuasViewModel @ViewModelInject constructor(
     private val repository: ForecastRepository
 ) : ViewModel() {
 

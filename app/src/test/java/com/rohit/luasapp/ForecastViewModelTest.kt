@@ -5,7 +5,7 @@ import androidx.lifecycle.Observer
 import com.rohit.luasapp.model.LoadedForecastData
 import com.rohit.luasapp.model.StopInfo
 import com.rohit.luasapp.repository.forecast.ForecastRepository
-import com.rohit.luasapp.ui.forecast.ForecastViewModel
+import com.rohit.luasapp.ui.forecast.LuasViewModel
 import com.rohit.luasapp.util.Response
 import com.nhaarman.mockitokotlin2.*
 import io.reactivex.rxjava3.core.Completable
@@ -25,7 +25,7 @@ import java.time.LocalTime
 @RunWith(MockitoJUnitRunner::class)
 class ForecastViewModelTest {
 
-    private lateinit var viewModel: ForecastViewModel
+    private lateinit var viewModel: LuasViewModel
     private lateinit var beforeMoonTime: LocalTime
     private lateinit var afterMoonTime: LocalTime
 
@@ -52,7 +52,7 @@ class ForecastViewModelTest {
 
         localTime = mockStatic(LocalTime::class.java)
 
-        viewModel = ForecastViewModel(repository)
+        viewModel = LuasViewModel(repository)
         viewModel.currentForecast.observeForever(mockLiveDataObserver)
     }
 

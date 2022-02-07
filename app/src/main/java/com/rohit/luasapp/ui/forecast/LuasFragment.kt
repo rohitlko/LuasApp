@@ -14,13 +14,13 @@ import com.rohit.luasapp.util.Response
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ForecastFragment : Fragment() {
+class LuasFragment : Fragment() {
 
     companion object {
-        fun newInstance() = ForecastFragment()
+        fun newInstance() = LuasFragment()
     }
 
-    private val viewModel: ForecastViewModel by viewModels()
+    private val viewModel: LuasViewModel by viewModels()
     private lateinit var binding: MainFragmentBinding
     private val tramsAdapter: LuasAdapter = LuasAdapter()
 
