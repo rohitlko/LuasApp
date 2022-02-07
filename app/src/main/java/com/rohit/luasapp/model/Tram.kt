@@ -8,9 +8,7 @@ import org.simpleframework.xml.Root
 @Root(name = "tram")
 @Parcelize
 data class Tram(
-    /**
-     * The Attribute annotation represents a serializable XML attribute within a XML element.
-     */
+
     @field : Attribute(name = "dueMins")
     var dueMins: String = "",
 

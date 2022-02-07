@@ -18,6 +18,7 @@ import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+    const val URL = "https://luasforecasts.rpa.ie/xml/"
 
     @Provides
     @Singleton
@@ -32,7 +33,7 @@ object NetworkModule {
     fun provideRetrofit(client: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(provideClient())
-            .baseUrl("https://luasforecasts.rpa.ie/xml/")
+            .baseUrl(URL)
             .addCallAdapterFactory(RxJava3CallAdapterFactory.createWithScheduler(Schedulers.io()))
             .addConverterFactory(SimpleXmlConverterFactory.create())
             .build()
