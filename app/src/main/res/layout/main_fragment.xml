@@ -18,6 +18,7 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+
         tools:context="com.rohit.luasapp.ui.LuasFragment">
 
         <TextView
@@ -47,16 +48,36 @@
             app:setAdapter="@{adapter}" />
 
         <TextView
-            android:id="@+id/stopName"
-            android:layout_width="match_parent"
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
+            android:text="@string/station"
+            android:textSize="@dimen/text_large"
+            android:layout_marginEnd="@dimen/margin_small"
+            app:layout_constraintEnd_toStartOf="@id/stopName"
+            android:textColor="@android:color/black"
+            android:layout_marginStart="@dimen/margin_small"
+            app:layout_constraintBottom_toTopOf="@+id/forecastRecyclerView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:paddingRight="@dimen/margin_large"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            />
+
+        <TextView
+            android:id="@+id/stopName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="56dp"
+            android:paddingEnd="@dimen/margin_large"
             android:text="@{forecast.stopName}"
-            android:layout_marginTop="@dimen/margin_large"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
             app:layout_constraintTop_toBottomOf="@id/textView"
             tools:text="Test" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Luas App</string>
+    <string name="station">From : </string>
 </resources>
