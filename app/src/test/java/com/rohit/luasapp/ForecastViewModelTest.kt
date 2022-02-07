@@ -1,9 +1,7 @@
-package com.rohit.luasapp.viewmodel
+package com.rohit.luasapp
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
-import androidx.lifecycle.SavedStateHandle
-import com.rohit.luasapp.RxImmediateSchedulerRule
 import com.rohit.luasapp.model.LoadedForecastData
 import com.rohit.luasapp.model.StopInfo
 import com.rohit.luasapp.repository.forecast.ForecastRepository
@@ -54,7 +52,7 @@ class ForecastViewModelTest {
 
         localTime = mockStatic(LocalTime::class.java)
 
-        viewModel = ForecastViewModel(repository, SavedStateHandle())
+        viewModel = ForecastViewModel(repository)
         viewModel.currentForecast.observeForever(mockLiveDataObserver)
     }
 
