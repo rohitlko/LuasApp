@@ -1,4 +1,4 @@
-package com.rohit.luasapp.binding
+package com.rohit.luasapp.adapter
 
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView

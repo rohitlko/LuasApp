@@ -1,4 +1,4 @@
-package com.rohit.luasapp
+package com.rohit.luasapp.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

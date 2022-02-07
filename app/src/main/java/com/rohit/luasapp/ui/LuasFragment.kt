@@ -1,4 +1,4 @@
-package com.rohit.luasapp
+package com.rohit.luasapp.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,9 +8,11 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import com.rohit.luasapp.adapter.LuasAdapter
 import com.rohit.luasapp.databinding.MainFragmentBinding
 import com.rohit.luasapp.data.StopInfo
 import com.rohit.luasapp.api.ApiResponse
+import com.rohit.luasapp.model.LuasViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

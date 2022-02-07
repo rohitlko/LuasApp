@@ -7,6 +7,7 @@ import com.rohit.luasapp.repository.forecast.LuasRepository
 import com.rohit.luasapp.api.ApiResponse
 import com.nhaarman.mockitokotlin2.*
 import com.rohit.luasapp.api.LoadedForecastData
+import com.rohit.luasapp.model.LuasViewModel
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Observable
 import org.junit.After

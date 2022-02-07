@@ -1,7 +1,8 @@
-package com.rohit.luasapp
+package com.rohit.luasapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.rohit.luasapp.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -1,4 +1,4 @@
-package com.rohit.luasapp
+package com.rohit.luasapp.model
 
 import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject

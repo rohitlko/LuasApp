@@ -11,14 +11,14 @@
 
         <variable
             name="adapter"
-            type="com.rohit.luasapp.LuasAdapter" />
+            type="com.rohit.luasapp.adapter.LuasAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.rohit.luasapp.LuasFragment">
+        tools:context="com.rohit.luasapp.ui.LuasFragment">
 
         <TextView
             android:id="@+id/textView"
